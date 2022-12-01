@@ -1,5 +1,5 @@
 import {
-  CanvasTexture, Group, Shape, Mesh, MeshLambertMaterial, PlaneGeometry, ExtrudeGeometry, Scene,
+  CanvasTexture, Group, Shape, Mesh, MeshLambertMaterial, PlaneGeometry, ExtrudeGeometry,
 } from 'three';
 
 const trackRadius = 225;
@@ -13,8 +13,8 @@ const deltaY = Math.sin(arcAngle1) * innerTrackRadius;
 const arcAngle2 = Math.asin(deltaY / outerTrackRadius);
 
 const arcCenterX = (
-  Math.cos(arcAngle1) * innerTrackRadius,
-  Math.cos(arcAngle2) * outerTrackRadius
+  Math.cos(arcAngle1) * innerTrackRadius
+  + Math.cos(arcAngle2) * outerTrackRadius
 ) / 2;
 
 const arcAngle3 = Math.acos(arcCenterX / innerTrackRadius);
@@ -135,7 +135,14 @@ function getOuterField(mapWidth: number, mapHeight: number) {
   field.moveTo(-mapWidth / 2, -mapHeight / 2);
   field.lineTo(0, -mapHeight / 2);
 
-  field.absarc(-arcCenterX, 0, outerTrackRadius, -arcAngle4, arcAngle4, true);
+  field.absarc(
+    -arcCenterX,
+    0,
+    outerTrackRadius,
+    -arcAngle4,
+    arcAngle4,
+    true,
+  );
 
   field.absarc(
     arcCenterX,
