@@ -3,14 +3,14 @@ import {
   DirectionalLight,
 } from 'three';
 
-interface lightTypes {
+interface LightTypes {
   directionalLight: DirectionalLight;
   ambientLight: AmbientLight;
 }
 
-function createLights(): lightTypes {
+function createLights(): LightTypes {
   const ambientLight = new AmbientLight(0xffffff, 0.6);
-  const directionalLight = new DirectionalLight(0xffffff, 0.8)
+  const directionalLight = new DirectionalLight(0xffffff, 0.8);
   directionalLight.position.set(200, 500, 300);
 
   return { ambientLight, directionalLight };

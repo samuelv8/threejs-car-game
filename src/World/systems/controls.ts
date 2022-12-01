@@ -1,12 +1,12 @@
 import { OrthographicCamera, PerspectiveCamera } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-interface controlsTypes {
+interface ControlsTypes {
   camera: PerspectiveCamera | OrthographicCamera;
   canvas: HTMLCanvasElement;
 }
 
-function createControls({ camera, canvas }: controlsTypes): OrbitControls {
+function createControls({ camera, canvas }: ControlsTypes): OrbitControls {
   const controls = new OrbitControls(camera, canvas);
   controls.minDistance = 1;
   controls.maxDistance = 95;

@@ -7,7 +7,7 @@ interface ResizerTypes {
 }
 
 const setSize = ({ container, camera, renderer }: ResizerTypes) => {
-  //camera.aspect = container.clientWidth / container.clientHeight;
+  // camera.aspect = container.clientWidth / container.clientHeight;
   camera.updateProjectionMatrix(); // automatically recalculate the frustrum
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);

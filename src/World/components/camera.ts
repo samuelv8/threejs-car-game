@@ -1,10 +1,10 @@
 import { PerspectiveCamera } from 'three';
 
-function createCamera(): PerspectiveCamera {
-  const aspectRatio = window.innerWidth / window.innerHeight;
-  // const cameraWidth = 960;
-  // const cameraHeight = cameraWidth / aspectRatio;
+export const aspectRatio = window.innerWidth / window.innerHeight;
+export const cameraWidth = 960;
+export const cameraHeight = cameraWidth / aspectRatio;
 
+function createCamera(): PerspectiveCamera {
   // const camera = new OrthographicCamera(
   //   cameraWidth / -2,
   //   cameraWidth / 2,

@@ -1,4 +1,4 @@
-import { Scene, Object3D } from 'three';
+import { Scene } from 'three';
 
 function createScene(): Scene {
   const scene = new Scene();

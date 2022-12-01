@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import {
   Clock,
   OrthographicCamera,
@@ -17,9 +18,13 @@ interface LoopTypes {
 const clock = new Clock();
 class Loop {
   camera: LoopTypes['camera'];
+
   scene: LoopTypes['scene'];
+
   renderer: LoopTypes['renderer'];
+
   updatables: any[];
+
   stats: Stats;
 
   constructor({ camera, scene, renderer }: LoopTypes) {
@@ -48,7 +53,6 @@ class Loop {
     const delta: number = clock.getDelta();
 
     for (const object of this.updatables) {
-      // @ts-ignore
       object.tick(delta);
     }
   }
