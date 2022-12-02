@@ -21,6 +21,8 @@ npm run start
 
 The game consists in speeding up or slowing down a moving car in a circular lane in order to avoid collisions with other cars in another intersecting circular lane. As the total number of laps completed increase, the number of cars in the other lane also increases.
 
+![WhatsApp Image 2022-12-01 at 22 39 19](https://user-images.githubusercontent.com/54087165/205195329-d81719b9-108b-4eba-a5fd-56aeb9c796bd.jpeg)
+
 ## How to play
 
 Press the up arrow key to accelerate and the down arrow key to slow down.
