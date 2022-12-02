@@ -7,7 +7,6 @@ export const instructionsElement = document.getElementById('instructions');
 export const resultsElement = document.getElementById('results');
 export const accelerateButton = document.getElementById('accelerate');
 export const decelerateButton = document.getElementById('decelerate');
-export const youtubeLogo = document.getElementById('youtube-main');
 
 // Geometry
 export const trackRadius = 225;

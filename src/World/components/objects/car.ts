@@ -1,7 +1,9 @@
 import {
-  Group, Mesh, BoxBufferGeometry, MeshLambertMaterial, CanvasTexture, Vector2,
+  Group, Mesh, BoxBufferGeometry, MeshLambertMaterial, CanvasTexture, Vector2
 } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { createWheels } from './wheels';
+import { pickRandom } from '@/World/utils';
 
 const cabinBaseColor = '#fff457';
 const cabinWindowColor = '#666666';
@@ -35,7 +37,19 @@ function getCarSideTexture() {
 
   return new CanvasTexture(canvas);
 }
-function createCar() {
+
+async function createCar() {
+  const loader = new GLTFLoader();
+
+  const data = await loader.loadAsync('public/assets/models/car.gltf');
+  (data).scene.scale.set(8, 8, 8);
+  (data).scene.position.z = 10;
+  (data).scene.rotateX(Math.PI / 2);
+  return (data).scene
+}
+
+
+function createTractor() {
   const car = new Group();
 
   const backWheel = createWheels();
@@ -81,4 +95,4 @@ function createCar() {
   return car;
 }
 
-export { createCar };
+export { createCar, createTractor };

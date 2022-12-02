@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Three.js Template</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="UTF-8" />
+<head>
+  <title>CMC30 PROJECT</title>
 
-    <link
-      rel="icon"
-      href="https://discoverthreejs.com/favicon.ico"
-      type="image/x-icon"
-    />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
 
-    <link href="./src/styles/index.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="http://pm1.narvii.com/6328/a6652a0b54add3771f505a0588e72e3dae81fbca_00.jpg"
+    type="image/x-icon" />
 
-    <script type="module" src="./dist/bundle.js"></script>
-  </head>
+  <link href="./src/styles/index.css" rel="stylesheet" type="text/css" />
 
-  <body>
-    <h1 id="h1"></h1>
-    <div id="scene-container">
-      <!-- Our <canvas> will be inserted here -->
+  <script type="module" src="./dist/bundle.js"></script>
+</head>
+
+<body>
+
+  <div id="score">Press UP</div>
+
+
+  <div id="scene-container">
+    <div id="controls">
+      <div id="buttons">
+        <button id="accelerate">
+          <svg width="30" height="30" viewBox="0 0 10 10">
+            <g transform="rotate(0, 5,5)">
+              <path d="M5,4 L7,6 L3,6 L5,4" />
+            </g>
+          </svg>
+        </button>
+        <button id="decelerate">
+          <svg width="30" height="30" viewBox="0 0 10 10">
+            <g transform="rotate(180, 5,5)">
+              <path d="M5,4 L7,6 L3,6 L5,4" />
+            </g>
+          </svg>
+        </button>
+      </div>
+      <div id="instructions">
+        Press UP to start. Avoid collision with other vehicles by accelerating
+        or decelerating with the UP and DOWN keys.
+      </div>
     </div>
-  </body>
+
+    <div id="results">
+      <div class="content">
+        <h1>You hit another vehicle</h1>
+        <p>To reset the game press R</p>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
