@@ -17,8 +17,18 @@ npm install
 npm run start
 ```
 
+## About the game
+
+The game consists in speeding up or slowing down a moving car in a circular lane in order to avoid collisions with other cars in another intersecting circular lane. As the total number of laps completed increase, the number of cars in the other lane also increases.
+
+## How to play
+
+Press the up arrow key to accelerate and the down arrow key to slow down.
+
 ## Implementation
 
 ### Blender
 
-The cars, trees and rocks were all designed on Blender and exported as .gltf files. Then, they were imported in the threejs code with GLTFLoader().
+The cars, trees and rocks were all designed on Blender and exported as .gltf files and later imported in the threejs code with GLTFLoader().
+
+![image](https://user-images.githubusercontent.com/54087165/205194439-3ae7017e-5554-4dd6-9aa4-2ce040d7f81a.png)
