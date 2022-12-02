@@ -346,21 +346,6 @@ async function main() {
     return new CanvasTexture(canvas);
   }
 
-  function getTruckSideTexture() {
-    const canvas = document.createElement("canvas");
-    canvas.width = 32;
-    canvas.height = 32;
-    const context = canvas.getContext("2d");
-
-    context.fillStyle = "#ffffff";
-    context.fillRect(0, 0, 32, 32);
-
-    context.fillStyle = "#666666";
-    context.fillRect(17, 5, 15, 10);
-
-    return new CanvasTexture(canvas);
-  }
-
   accelerateButton.addEventListener("mousedown", function () {
     startGame();
     accelerate = true;
@@ -401,7 +386,7 @@ async function main() {
     }
   });
 
-  function animation(timestamp: any) {
+  async function animation(timestamp: any) {
     if (!lastTimestamp) {
       lastTimestamp = timestamp;
       return;
@@ -420,7 +405,7 @@ async function main() {
     }
 
     // Add a new vehicle at the beginning and with every 5th lap
-    if (otherVehicles.length < (laps + 1) / 5) addVehicle();
+    if (otherVehicles.length < (laps + 1) / 5) await addVehicle();
 
     moveOtherVehicles(timeDelta);
 
@@ -469,7 +454,7 @@ async function main() {
     return speed;
   }
 
-  function addVehicle() {
+  async function addVehicle() {
     const vehicleTypes = ["car", "truck"];
 
     const type = pickRandom(vehicleTypes);
@@ -477,7 +462,7 @@ async function main() {
     const clockwise = Math.random() >= 0.5;
 
     const angle = clockwise ? Math.PI / 2 : -Math.PI / 2;
-    const mesh = type == "car" ? createTractor() : rock;
+    const mesh = type == "car" ? createTractor() : await createRock();
     scene.add(mesh);
 
     otherVehicles.push({ mesh, type, speed, clockwise, angle });
